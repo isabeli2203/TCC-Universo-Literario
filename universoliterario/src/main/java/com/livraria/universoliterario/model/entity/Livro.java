@@ -20,14 +20,17 @@ public class Livro {
 	@Column(name = "Titulo")
 	private String titulo;
 	
+	@Column(name = "ISBN")
+	private int isbn;
+	
+	@Column(name = "Estoque")
+	private int estoque;
+	
 	@Column(name = "Preco")
 	private double preco;	
 	
 	@Column(name ="Imagem")
 	private byte[] imagem;
-	
-	@Column(name = "Quantidade")
-	private int quantidade;
 	
 	@Column(name = "Destaque")
 	private String destaque;
@@ -36,15 +39,16 @@ public class Livro {
 	private String statusLivro;
 	
 	@ManyToOne
+	@JoinColumn(name = "editora_id")
+	private Editora editora;
+	
+	@ManyToOne
+	@JoinColumn(name = "autor_id")
+	private Autor autor;
+	
+	@ManyToOne
 	@JoinColumn(name = "genero_id")
 	private Genero genero;
-	
-
-	@Column(name = "ISBN")
-	private int isbn;
-	
-	@Column(name = "Complemento")
-	private String descricao;
 
 	public long getId() {
 		return id;
@@ -60,6 +64,22 @@ public class Livro {
 
 	public void setTitulo(String titulo) {
 		this.titulo = titulo;
+	}
+
+	public int getIsbn() {
+		return isbn;
+	}
+
+	public void setIsbn(int isbn) {
+		this.isbn = isbn;
+	}
+
+	public int getEstoque() {
+		return estoque;
+	}
+
+	public void setEstoque(int estoque) {
+		this.estoque = estoque;
 	}
 
 	public double getPreco() {
@@ -78,14 +98,6 @@ public class Livro {
 		this.imagem = imagem;
 	}
 
-	public int getQuantidade() {
-		return quantidade;
-	}
-
-	public void setQuantidade(int quantidade) {
-		this.quantidade = quantidade;
-	}
-
 	public String getDestaque() {
 		return destaque;
 	}
@@ -102,6 +114,22 @@ public class Livro {
 		this.statusLivro = statusLivro;
 	}
 
+	public Editora getEditora() {
+		return editora;
+	}
+
+	public void setEditora(Editora editora) {
+		this.editora = editora;
+	}
+
+	public Autor getAutor() {
+		return autor;
+	}
+
+	public void setAutor(Autor autor) {
+		this.autor = autor;
+	}
+
 	public Genero getGenero() {
 		return genero;
 	}
@@ -110,23 +138,11 @@ public class Livro {
 		this.genero = genero;
 	}
 
-	public int getIsbn() {
-		return isbn;
-	}
-
-	public void setIsbn(int isbn) {
-		this.isbn = isbn;
-	}
-
-	public String getDescricao() {
-		return descricao;
-	}
-
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
+	public void setQuantidade(int i) {
+		// TODO Auto-generated method stub
+		
 	}
 	
-
 	
-
+	
 }

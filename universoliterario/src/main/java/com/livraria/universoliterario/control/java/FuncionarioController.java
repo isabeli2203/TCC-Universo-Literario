@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.livraria.universoliterario.model.entity.Funcionario;
 import com.livraria.universoliterario.model.entity.Livro;
+import com.livraria.universoliterario.service.AutorService;
+import com.livraria.universoliterario.service.EditoraService;
 import com.livraria.universoliterario.service.FuncionarioService;
 import com.livraria.universoliterario.service.GeneroService;
 import com.livraria.universoliterario.service.LivroService;
@@ -31,12 +33,18 @@ public class FuncionarioController {
 	final LivroService livroService;
 	final FuncionarioService funcionarioService;
 	final GeneroService generoService;
+	final AutorService autorService;
+	final EditoraService editoraService;
+
 
 	// INJEÇÃO DE DEPENDENCIA
 
-	public FuncionarioController(FuncionarioService _funcionarioService, GeneroService _generoService, LivroService _livroService) {
+	public FuncionarioController(FuncionarioService _funcionarioService, GeneroService _generoService,
+			AutorService _autorService, EditoraService _editoraService, LivroService _livroService) {
 		this.funcionarioService = _funcionarioService;
 		this.generoService = _generoService;
+		this.autorService = _autorService;
+		this.editoraService = _editoraService;
 		this.livroService = _livroService;
 
 	}
@@ -177,6 +185,8 @@ public class FuncionarioController {
 	@GetMapping("/AdicionarProdutoADM")
 	public String getadicionarLivrosADM(ModelMap model) {
 		model.addAttribute("genero", generoService.findAll());
+		model.addAttribute("autor", autorService.findAll());
+		model.addAttribute("editora", editoraService.findAll());
 		model.addAttribute("livro", new Livro());
 		return "AdicionarLivroADM";
 	}

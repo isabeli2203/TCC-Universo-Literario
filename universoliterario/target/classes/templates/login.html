@@ -32,7 +32,7 @@
     <section>
         <form action="#" method="post" th:object="${funcionario}" th:action="@{/universoliterario/funcionario/logar}">
             <div method="post">
-                <input type="text" id="text" placeholder="Funcionário/ADm" th:field="*{email}">
+                <input type="text" id="text" placeholder="Email" th:field="*{email}">
                 <input type="password" id="senha" placeholder="Senha" th:field="*{senha}">
                 <span th:text="${serverMessage}"></span>
 
@@ -49,9 +49,11 @@
         </form>
     </section>
 
-   
+
 
     <script src="script.js"></script>
+    
+    
 
 </body>
 </html>

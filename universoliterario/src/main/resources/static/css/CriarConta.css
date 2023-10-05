@@ -55,8 +55,8 @@ button[type="submit"] {
   width: 150px;
   height: 45px;
   border-radius: 15px;
-  background-color: rgb(128, 128, 255);
-  color: white;
+  background-color: #a682ff
+
 }
 
 #botão:hover {
@@ -68,19 +68,7 @@ footer {
   text-align: center;
   font-style: italic, bold;
 }
-.imagem-lateral {
-  position: absolute;
-  top: 585px;
-  left: -205px;
-  width: 470px;
-  max-width: 100%;
-}
-.imagem-lateral2 {
-  position: absolute;
-  top: 585px;
-  right: -270px;
-  width: 470px;
-}
+
 
 label {
   font-weight: bold;

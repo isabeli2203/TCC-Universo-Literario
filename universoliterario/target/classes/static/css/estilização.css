@@ -272,8 +272,6 @@ body{
 }
 
 
-
-
 body {
   font: normal 12pt Arial;
   background-color: rgb(255, 255, 255);
@@ -364,29 +362,8 @@ button#botão {
   transition: 0.5s;
 }
 
-.imagem-lateral {
-  position: absolute;
-  bottom: 77px;
-  left: -170px;
-  width: 100%;
-  max-width: 500px;
-  opacity: 0.7;
-}
-
-.imagem-lateral2 {
-  position: absolute;
-  bottom: 78px;
-  right: -120px;
-  width: 100%;
-  max-width: 260px;
-  opacity: 0.7;
-}
 
 footer {
-  position: absolute;
-  bottom: 0;
-  left: -2px;
-  background-color: #669f8a;
-  width: 110%;
-  height: 80px;
+  text-align: center;
+  font-style: italic, bold;
 }

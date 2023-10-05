@@ -7,6 +7,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.livraria.universoliterario.model.entity.Livro;
+import com.livraria.universoliterario.repository.AutorRepository;
+import com.livraria.universoliterario.repository.EditoraRepository;
 import com.livraria.universoliterario.repository.GeneroRepository;
 import com.livraria.universoliterario.repository.LivroRepository;
 
@@ -18,13 +20,18 @@ public class LivroService {
 	// objeto repository
 	private LivroRepository livroRepository;
 	private GeneroRepository generoRepository;
+	private AutorRepository autorRepository;
+	private EditoraRepository editoraRepository;
 
 
 	// Injeção de dependência
-	public LivroService(LivroRepository _livroRepository, GeneroRepository _generoRepository) {
+	public LivroService(LivroRepository _livroRepository, GeneroRepository _generoRepository,
+			 AutorRepository _autorRepository,  EditoraRepository _editoraRepository) {
 		super();
 		this.livroRepository = _livroRepository;
 		this.setGeneroRepository(_generoRepository);
+		this.setAutorRepository(_autorRepository);
+		this.setEditoraRepository(_editoraRepository);
 		
 	
 	}
@@ -144,6 +151,30 @@ public class LivroService {
 
 	public void setGeneroRepository(GeneroRepository generoRepository) {
 		this.generoRepository = generoRepository;
+	}
+
+
+
+	public AutorRepository getAutorRepository() {
+		return autorRepository;
+	}
+
+
+
+	public void setAutorRepository(AutorRepository autorRepository) {
+		this.autorRepository = autorRepository;
+	}
+
+
+
+	public EditoraRepository getEditoraRepository() {
+		return editoraRepository;
+	}
+
+
+
+	public void setEditoraRepository(EditoraRepository editoraRepository) {
+		this.editoraRepository = editoraRepository;
 	}
 
 	

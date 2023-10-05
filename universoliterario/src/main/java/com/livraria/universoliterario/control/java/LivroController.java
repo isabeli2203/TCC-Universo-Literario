@@ -18,6 +18,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.livraria.universoliterario.model.entity.Livro;
+import com.livraria.universoliterario.service.AutorService;
+import com.livraria.universoliterario.service.EditoraService;
 import com.livraria.universoliterario.service.GeneroService;
 import com.livraria.universoliterario.service.LivroService;
 
@@ -31,22 +33,27 @@ public class LivroController {
 
 	final LivroService livroService;
 	final GeneroService generoService;
+	final AutorService autorService;
+	final EditoraService editoraService;
 
 
 	// CASO O PRODUTO NÃO TENHA UMA IMAGEM CADASTRADA NO BANCO DE DADOS
 	private String semImagem = "/img/semImagem.png";
 	private String foto = "";
 
-	public LivroController(LivroService _livroService, GeneroService  _generoService) {
+	public LivroController(LivroService _livroService, GeneroService  _generoService, 
+			AutorService  _autorService, EditoraService  _editoraService) {
 		super();
 		this.livroService = _livroService;
 		this.generoService = _generoService;
+		this.autorService = _autorService;
+		this.editoraService = _editoraService;
 
 
 	}
 
-	// CARREGA A IMAGEM DO SERVIDOR NA PÁGINA DE ACORDO COM O "ID" DO PRODUTO
-	// NA PÁGINA HTML FICA ASSIM: src="/api/v1/produto/show/image/1"
+	// CARREGA A IMAGEM DO SERVIDOR NA PÁGINA DE ACORDO COM O "ID" DO Livro
+	// NA PÁGINA HTML FICA ASSIM: src="/api/v1/livro/show/image/1"
 	// CARREGA A URL DA IMAGEM
 	@GetMapping("/show/image/{id}")
 	@ResponseBody
@@ -140,6 +147,8 @@ public class LivroController {
 		}
 
 		model.addAttribute("genero", generoService.findAll());
+		model.addAttribute("autor", autorService.findAll());
+		model.addAttribute("editora", editoraService.findAll());
 		model.addAttribute("semImagem", semImagem);
 		model.addAttribute("livro", livro);
 

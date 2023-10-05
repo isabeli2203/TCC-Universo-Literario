@@ -15,8 +15,8 @@ public class Genero {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
-	@Column(name = "nomeGenero")
-	private String nomeGenero;
+	@Column(name = "Genero")
+	private String descrição;
 
 	public long getId() {
 		return id;
@@ -26,12 +26,12 @@ public class Genero {
 		this.id = id;
 	}
 
-	public String getNomeGenero() {
-		return nomeGenero;
+	public String getGenero() {
+		return descrição;
 	}
 
-	public void setNomeGenero(String nomeGenero) {
-		this.nomeGenero = nomeGenero;
+	public void setNomeGenero(String descrição) {
+		this.descrição = descrição;
 	}
 
 	
