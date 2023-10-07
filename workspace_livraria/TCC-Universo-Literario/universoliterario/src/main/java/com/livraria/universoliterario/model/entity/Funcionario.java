@@ -14,16 +14,9 @@ public class Funcionario {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-
-	@Column(name = "nome")
 	private String nome;
-	
-	@Column(name = "email")
 	private String email;
-	
-	@Column(name = "senha_usuario")
 	private String senha;
-	
 	@Column(name = "nivelAcess")
 	private String acesso;
 

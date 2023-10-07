@@ -14,9 +14,7 @@ public class Autor {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-	
-	@Column(name = "Autor")
-	private String descrição;
+	private String nome;
 
 	public long getId() {
 		return id;
@@ -26,12 +24,12 @@ public class Autor {
 		this.id = id;
 	}
 
-	public String getAutor() {
-		return descrição;
+	public String getNome() {
+		return nome;
 	}
 
-	public void setAutor(String descrição) {
-		this.descrição = descrição;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
 	

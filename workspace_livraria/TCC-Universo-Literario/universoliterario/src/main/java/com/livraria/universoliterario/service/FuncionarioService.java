@@ -33,7 +33,7 @@ public class FuncionarioService {
 	}
 
 	@Transactional
-	public Funcionario acessar(String email, String senha) {
+	public Funcionario Acessar(String email, String senha) {
 		Funcionario funcionario = funcionarioRepository.findByEmail(email);
 
 		if (funcionario != null) {
@@ -91,8 +91,8 @@ public class FuncionarioService {
 		Livro _livro = livro;
 
 		_livro.setPreco(0.0);
-		_livro.setQuantidade(0);
-		_livro.setDestaque("NÃO");
+		//_livro.setQuantidade(0);
+		
 		_livro.setStatusLivro("INATIVO");
 		livroRepository.save(_livro);
 	}

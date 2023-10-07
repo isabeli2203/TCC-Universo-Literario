@@ -1,6 +1,5 @@
 package com.livraria.universoliterario.model.entity;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -14,9 +13,7 @@ public class Editora {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-	
-	@Column(name = "Editora")
-	private String descrição;
+	private String nome;
 
 	public long getId() {
 		return id;
@@ -26,12 +23,12 @@ public class Editora {
 		this.id = id;
 	}
 
-	public String getEditora() {
-		return descrição;
+	public String getNome() {
+		return nome;
 	}
 
-	public void setNomeGenero(String descrição) {
-		this.descrição = descrição;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
 	

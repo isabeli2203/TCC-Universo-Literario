@@ -16,24 +16,17 @@ public class Livro {
 	@Id
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	private long id;
-	
-	@Column(name = "Titulo")
 	private String titulo;
-	
-	@Column(name = "ISBN")
 	private int isbn;
+	private int quantidade;
+	private String sinopse;
+
 	
-	@Column(name = "Estoque")
-	private int estoque;
-	
-	@Column(name = "Preco")
+
 	private double preco;	
 	
-	@Column(name ="Imagem")
-	private byte[] imagem;
 	
-	@Column(name = "Destaque")
-	private String destaque;
+	private byte[] imagem;
 	
 	@Column(name = "StatusLivro")
 	private String statusLivro;
@@ -74,12 +67,12 @@ public class Livro {
 		this.isbn = isbn;
 	}
 
-	public int getEstoque() {
-		return estoque;
+	public int getQuantidade() {
+		return quantidade;
 	}
 
-	public void setEstoque(int estoque) {
-		this.estoque = estoque;
+	public void setQuantidade(int quantidade) {
+		this.quantidade = quantidade;
 	}
 
 	public double getPreco() {
@@ -98,13 +91,6 @@ public class Livro {
 		this.imagem = imagem;
 	}
 
-	public String getDestaque() {
-		return destaque;
-	}
-
-	public void setDestaque(String destaque) {
-		this.destaque = destaque;
-	}
 
 	public String getStatusLivro() {
 		return statusLivro;
@@ -137,11 +123,14 @@ public class Livro {
 	public void setGenero(Genero genero) {
 		this.genero = genero;
 	}
-
-	public void setQuantidade(int i) {
-		// TODO Auto-generated method stub
-		
+	public String getSinopse() {
+		return sinopse;
 	}
+
+	public void setSinopse(String sinopse) {
+		this.sinopse = sinopse;
+	}
+
 	
 	
 	

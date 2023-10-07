@@ -62,8 +62,8 @@ public class LivroService {
 		Livro _livro = livro;
 
 		_livro.setPreco(0.0);
-		_livro.setQuantidade(0);
-		_livro.setDestaque("NÃO");
+		//_livro.setQuantidade(0);
+		
 		_livro.setStatusLivro("INATIVO");
 		livroRepository.save(_livro);
 	}
@@ -73,7 +73,7 @@ public class LivroService {
 
 		Livro _livro = livro;
 
-		_livro.setDestaque("NÃO");
+	
 
 		_livro.setStatusLivro("ATIVO");
 		livroRepository.save(_livro);
@@ -92,9 +92,6 @@ public class LivroService {
 			livro.setImagem(null);
 		}
 
-		if (livro.getDestaque() == null) {
-			livro.setDestaque("NÃO");
-		}
 		livro.setStatusLivro("ATIVO");
 
 		return livroRepository.save(livro);
@@ -120,9 +117,6 @@ public class LivroService {
 			}
 		}
 
-		if (_livro.getDestaque() == null) {
-			_livro.setDestaque("NÃO");
-		}
 
 
 		_livro.setStatusLivro("ATIVO");
