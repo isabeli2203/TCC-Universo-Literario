@@ -1,20 +1,26 @@
 package com.livraria.universoliterario.control.java;
 
+import java.io.IOException;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.livraria.universoliterario.model.entity.Funcionario;
 import com.livraria.universoliterario.model.entity.Livro;
 import com.livraria.universoliterario.service.AutorService;
 import com.livraria.universoliterario.service.EditoraService;
 import com.livraria.universoliterario.service.GeneroService;
 import com.livraria.universoliterario.service.LivroService;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletResponse;
 
 @Controller
 @RequestMapping("/universoliterario/livros")
@@ -49,7 +55,7 @@ public class LivroController {
 	@GetMapping("/AdicionarLivro")
 	public String getAdd(ModelMap model) {
 
-		model.addAttribute("funcionario", new Funcionario());
+		model.addAttribute("livro", new Livro());
 
 		return "AdicionarLivro";
 
@@ -58,10 +64,27 @@ public class LivroController {
 	@GetMapping("/Estoque")
 	public String getEstoque(ModelMap model) {
 
-		model.addAttribute("funcionario", new Funcionario());
+		model.addAttribute("livro", new Livro());
 
 		return "listalivros";
 
+	}
+	
+	@GetMapping("/show/image/{id}")
+	@ResponseBody
+	public void mostrarImagem(@PathVariable("id") long id, HttpServletResponse response, Livro livro)
+			throws ServletException, IOException {
+
+		livro = livroService.findById(id);
+
+		response.setContentType("+image/jpeg, image/jpg, image/png, image/gif");
+		if (livro.getImagem() != null) {
+			response.getOutputStream().write(livro.getImagem());
+		} else {
+			response.getOutputStream().write(null);
+		}
+
+		response.getOutputStream().close();
 	}
 
 	

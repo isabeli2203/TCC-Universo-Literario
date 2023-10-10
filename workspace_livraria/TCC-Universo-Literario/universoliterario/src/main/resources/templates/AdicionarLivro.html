@@ -67,7 +67,7 @@
         </head>
         
         <body>
-			<form action="#" th:action="@{/universoliterario/livros/save}" enctype="multipart/form-data"
+			<form th:action="@{/universoliterario/livros/save}" enctype="multipart/form-data"
 					th:object="${livro}" method="post">
           <div class="container">
             <h2>Adicionar Livro</h2>
@@ -76,16 +76,16 @@
               <input type="text" id="titulo" name="titulo"  th:field="*{titulo}">
         
               <label for="autor">Autor do Livro</label>
-              <input type="text" id="autor" name="autor" required th:field="*{autor_id}">
+              <input type="text" id="autor" name="autor" required th:field="*{autor}">
         
               <label for="editora">Editora do Livro</label>
-              <input type="text" id="editora" name="editora" required  th:field="*{editora_id}">
+              <input type="text" id="editora" name="editora" required  th:field="*{editora}">
       
               <label for="isbn">ISBN</label>
               <input type="text" id="isbn" name="isbn" required th:field="*{isbn}">
         
               <label for="genero">Gênero</label>
-              <select id="genero" name="genero" required th:field="*{genero_id}">
+              <select id="genero" name="genero" required th:field="*{genero}">
                 <option value="" disabled selected>Selecione o gênero</option>
                 <option value="genero">LGBTQIA+</option>
                 <option value="genero">Romance</option>
