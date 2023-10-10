@@ -193,18 +193,8 @@ body{
 	background-color: rgb(253, 250, 244);
 }
 
-.footer {
-    position: relative;
-    left: 0;
-    bottom: 0;
-    height: 80px;
-    width: 100%;
-    background-color: rgb(243, 126, 72);
-    color: rgb(244, 250, 133);
-    text-align: center;
-    padding: 20px 0;
-    line-height: 0.8rem;
-}
+
+
 
 .back {
 	position: fixed;
@@ -323,9 +313,9 @@ button#botão {
   width: 170px;
   height: 45px;
   border-radius: 23px;
-  background-color: rgb(128, 128, 255);
+  background-color: #A9AEFA;
   color: white;
-  border-color: black;
+  border-color: #000000;
   margin-top: 40px;
   text-decoration: none;
 }
@@ -360,7 +350,7 @@ button#botão {
 }
 
 .links a:hover {
-  color: #7776E8;
+  color: #ffffff;
   transition: 0.5s;
 }
 
@@ -386,7 +376,7 @@ footer {
   position: absolute;
   bottom: 0;
   left: -2px;
-  background-color: #669f8a;
+  background-color: rgb(255, 255, 255);
   width: 110%;
   height: 80px;
 }
