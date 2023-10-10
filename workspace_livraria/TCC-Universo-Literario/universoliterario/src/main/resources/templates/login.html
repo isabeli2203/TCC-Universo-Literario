@@ -10,28 +10,20 @@
 
 </head>
 
-<main id="container">
-    <form id="login_form"> 
-        <div id="form_header">
-         
-        </div>
 
-<div class="container">
-    
-
-        <div class="my-3 text-center">
-
-        </div>
 
 <body>
-    <header>
-        <img id="logo_nome" src="/img/logoo.png">
-        <h1>Universo Literário</h1>
-    </header>
+
+<main id="container">
+    
 
     <section>
-        <form action="#" method="post" th:object="${funcionario}" th:action="@{/universoliterario/funcionario/logar}">
-            <div>
+	    <div>
+	     
+	        <h1>Universo Literário</h1>
+	    </div>
+        <form  action="#" method="post" th:object="${funcionario}" th:action="@{/universoliterario/funcionario/logar}">
+            <div id="form_header">
                 <input type="text" id="text" placeholder="Email" th:field="*{email}">
                 <input type="password" id="senha" placeholder="Senha" th:field="*{senha}">
         
@@ -47,8 +39,8 @@
         </form>
     </section>
 
-   
-    <script src="script.js"></script>
+</main>
+    <script src="/js/script.js"></script>
 
 </body>
 </html>
